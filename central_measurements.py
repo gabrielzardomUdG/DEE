@@ -4,7 +4,8 @@ import handmade_utils.utils as hmu
 
 df = pd.read_csv('source/data_science_student_marks.csv')
 
-#------------------------------Class Frequency--------------------------------------
+#------------------------------Central Measurements--------------------------------------
+hmu.print_centered("Central Measurements",32,"*")
 
 """
 The array 'bins' defines our class limits, from the minimum to the maximum values.
@@ -17,11 +18,13 @@ labels = ['0–10', '11–20', '21–30', '31–40', '41–50', '51–60', '61�
 class_intervals = hmu.get_class_intervals_info(bins, labels, df, "english_marks")
 
 #------------------------------Data average--------------------------------------
+hmu.print_centered("Data average",32,"*")
 average = (df['english_marks'].sum() / len(df['english_marks']))
-print("Average")
+print("General Average")
 print(average.round(2))
-#------------------------------Class average--------------------------------------
-print("Class information")
+#------------------------------Class Information--------------------------------------
+hmu.print_centered("Class Information",32,"*")
+print("Class Information")
 print(class_intervals)
 
 

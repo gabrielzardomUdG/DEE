@@ -39,6 +39,12 @@ def get_class_intervals_info(array_number_limits: list, array_labels: list, data
 
     return df_result
 
+def print_centered(text: str, width: int, fill_char: str = ' ') -> None:
+    if not fill_char or len(fill_char) != 1:
+        raise ValueError("fill_char must be a single character.")
+
+    centered_text = text.center(width, fill_char)
+    print(centered_text)
 
 def variance_of_sample(data : list) -> float:
     #See variance_of_sample.jpg
