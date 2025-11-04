@@ -29,22 +29,30 @@ print(class_intervals)
 
 #------------------------------Graphs--------------------------------------
 
-#General graph configuration
+# Histogram
 plt.figure(figsize=(10, 6))
 plt.xlabel("Mark Ranges")
 plt.ylabel("Number of Students")
 plt.title("Distribution of English Marks by Range")
 plt.grid(axis='y', linestyle='--', alpha=0.7)
-plt.legend()
-
-# Histogram
 plt.bar(labels, class_intervals['Frequency'].to_numpy(), color='skyblue', edgecolor='black', alpha=0.7, label='Histogram')
 plt.show()
 
 # Frequency polygon
+plt.figure(figsize=(10, 6))
+plt.xlabel("Mark Ranges")
+plt.ylabel("Number of Students")
+plt.title("Distribution of English Marks by Range")
+plt.grid(axis='y', linestyle='--', alpha=0.7)
 plt.plot(labels, class_intervals['Frequency'].to_numpy(), marker='o', color='red', linewidth=2, label='Frequency Polygon')
 plt.show()
 
 # Combination
+plt.figure(figsize=(10, 6))
+plt.xlabel("Mark Ranges")
+plt.ylabel("Number of Students")
+plt.title("Distribution of English Marks by Range")
+plt.grid(axis='y', linestyle='--', alpha=0.7)
 plt.bar(labels, class_intervals['Frequency'].to_numpy(), color='skyblue', edgecolor='black', alpha=0.7, label='Histogram')
 plt.plot(labels, class_intervals['Frequency'].to_numpy(), marker='o', color='red', linewidth=2, label='Frequency Polygon')
+plt.show()
