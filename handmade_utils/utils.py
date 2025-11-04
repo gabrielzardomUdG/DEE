@@ -21,7 +21,7 @@ def get_class_intervals_info(array_number_limits: list, array_labels: list, data
         upper = array_number_limits[i + 1]
         midpoints.append((lower + upper) / 2)
 
-    #We class averages.
+    #We obtain class averages.
     class_average = []
     for label in array_labels:
         class_values = dataframe[column_name][cut_series == label]

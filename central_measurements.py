@@ -21,7 +21,7 @@ average = (df['english_marks'].sum() / len(df['english_marks']))
 print("Average")
 print(average.round(2))
 #------------------------------Class average--------------------------------------
-print("Class average")
+print("Class information")
 print(class_intervals)
 
 
