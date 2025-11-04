@@ -1,5 +1,4 @@
 import pandas as pd
-import matplotlib.pyplot as plt
 import handmade_utils.utils as hmu
 
 df = pd.read_csv('source/data_science_student_marks.csv')
