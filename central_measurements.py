@@ -5,7 +5,6 @@ import handmade_utils.utils as hmu
 df = pd.read_csv('source/data_science_student_marks.csv')
 
 #------------------------------Central Measurements--------------------------------------
-hmu.print_centered("Central Measurements",32,"*")
 
 """
 The array 'bins' defines our class limits, from the minimum to the maximum values.
@@ -18,29 +17,34 @@ labels = ['0–10', '11–20', '21–30', '31–40', '41–50', '51–60', '61�
 class_intervals = hmu.get_class_intervals_info(bins, labels, df, "english_marks")
 
 #------------------------------Data average--------------------------------------
-hmu.print_centered("Data average",32,"*")
+hmu.print_centered("Data average",80,"*")
 average = (df['english_marks'].sum() / len(df['english_marks']))
 print("General Average")
 print(average.round(2))
 #------------------------------Class Information--------------------------------------
-hmu.print_centered("Class Information",32,"*")
+hmu.print_centered("Class Information",80,"*")
 print("Class Information")
 print(class_intervals)
 
 
 #------------------------------Graphs--------------------------------------
-# --- Combined Histogram and Frequency Polygon ---
+
+#General graph configuration
 plt.figure(figsize=(10, 6))
-
-# Histogram
-plt.bar(labels, class_intervals['Frequency'].to_numpy(), color='skyblue', edgecolor='black', alpha=0.7, label='Histogram')
-
-# Frequency polygon (line on top of bars)
-plt.plot(labels, class_intervals['Frequency'].to_numpy(), marker='o', color='red', linewidth=2, label='Frequency Polygon')
-
 plt.xlabel("Mark Ranges")
 plt.ylabel("Number of Students")
 plt.title("Distribution of English Marks by Range")
 plt.grid(axis='y', linestyle='--', alpha=0.7)
 plt.legend()
+
+# Histogram
+plt.bar(labels, class_intervals['Frequency'].to_numpy(), color='skyblue', edgecolor='black', alpha=0.7, label='Histogram')
 plt.show()
+
+# Frequency polygon
+plt.plot(labels, class_intervals['Frequency'].to_numpy(), marker='o', color='red', linewidth=2, label='Frequency Polygon')
+plt.show()
+
+# Combination
+plt.bar(labels, class_intervals['Frequency'].to_numpy(), color='skyblue', edgecolor='black', alpha=0.7, label='Histogram')
+plt.plot(labels, class_intervals['Frequency'].to_numpy(), marker='o', color='red', linewidth=2, label='Frequency Polygon')
