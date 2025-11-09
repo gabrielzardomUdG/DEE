@@ -13,13 +13,28 @@ data = df['english_marks'].to_numpy()
 hmu.print_centered("Values",80,"*")
 global_min_value : float = np.min(data)
 global_max_value : float = np.max(data)
+
+#19.31 and 7.78 in text book
 average : float = np.mean(data)
 standard_deviation : float = np.std(data)
-agustin_min_proportion_low_value : float = average - standard_deviation
-agustin_max_proportion_low_value : float = average + standard_deviation
-agustin_lowZ_first_form: float = (agustin_min_proportion_low_value - average)/standard_deviation
-agustin_highZ_first_form: float = (agustin_max_proportion_low_value - average)/standard_deviation
-agustin_min_proportion : float = 1 - ((1/2) ** agustin_highZ_first_form)
+
+#7.04 and 31.6 in textbook
+agustin_proportion_low_value : float = average - standard_deviation
+agustin_proportion_high_value : float = average + standard_deviation
+
+agustin_lowZ_first_form: float = (agustin_proportion_low_value - average) / standard_deviation
+agustin_highZ_first_form: float = (agustin_proportion_high_value - average) / standard_deviation
+Pmin : float = 1 - ((1 / 2) ** agustin_highZ_first_form)
+Pmax : float = 1 - ((1 / 8) ** agustin_highZ_first_form)
+
+p = 0.65
+min_log_term = math.log(1 / (1 - p)) / math.log(2)
+min_low_range = average - (standard_deviation * min_log_term)
+min_high_range = average + (standard_deviation * min_log_term)
+
+max_log_term = math.log(1 / (1 - p)) / math.log(8)
+max_low_range = average - (standard_deviation * max_log_term)
+max_high_range = average + (standard_deviation * max_log_term)
 
 print("Statistical Summary")
 print("-" * 40)
@@ -31,16 +46,14 @@ print()
 
 print("Agustin's Proportion Details")
 print("-" * 40)
-print(f"Min proportion range values: {agustin_min_proportion_low_value:.2f} to {agustin_max_proportion_low_value:.2f}")
-print(f"Min proportion range z values: {agustin_lowZ_first_form:.2f} to {agustin_highZ_first_form:.2f}")
-print(f"Agustin minimum proportion: {agustin_min_proportion:.2f}")
+print(f"Min/Max proportion range values: {agustin_proportion_low_value:.2f} to {agustin_proportion_high_value:.2f}")
+print(f"Range z values: {agustin_lowZ_first_form:.2f} to {agustin_highZ_first_form:.2f}")
+print(f"Agustin minimum proportion (Pmin): {Pmin:.2f}")
+print(f"Agustin maximum proportion (Pmax): {Pmax:.2f}")
+print(f"Agustin min proportion at 65%: {min_low_range:.2f} to {min_high_range:.2f}")
+print(f"Agustin max proportion at 65%: {max_low_range:.2f} to {max_high_range:.2f}")
+print(f"Agustin normal proportion range: {agustin_proportion_low_value:.2f} to {agustin_proportion_high_value:.2f}")
 
-p = 0.65
-log_term = math.log(1 / (1 - p)) / math.log(2)
-low_range = average - (standard_deviation * log_term)
-high_range = average + (standard_deviation * log_term)
-
-print(f"Agustin proportion at 65%: {low_range:.2f} to {high_range:.2f}")
 # Curva normal teórica
 x = np.linspace(global_min_value, global_max_value, 100)
 y = norm.pdf(x, average, standard_deviation)
