@@ -56,12 +56,14 @@ print(f"Agustin normal proportion range: {agustin_proportion_low_value:.2f} to {
 
 # Curva normal teórica
 x = np.linspace(global_min_value, global_max_value, 100)
+x2 = np.linspace(agustin_proportion_low_value, agustin_proportion_high_value, 100)
 y = norm.pdf(x, average, standard_deviation)
 
 # Visualización
 plt.figure(figsize=(8,5))
 plt.hist(data, bins=10, density=True, alpha=0.6, color='lightblue', edgecolor='black', label='Observed Data')
-plt.plot(x, y, 'r-', linewidth=2, label='Normal Curve')
+plt.plot(x, y, 'r-', linewidth=2, label='Global Normal Curve')
+plt.plot(x2, y, 'b-', linewidth=2, label='Local Normal Curve')
 plt.title('Score Distribution (English Marks)')
 plt.xlabel('Score')
 plt.ylabel('Frequency')
