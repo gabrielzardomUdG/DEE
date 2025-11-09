@@ -1,3 +1,4 @@
+import math
 import pandas as pd
 import numpy as np
 import handmade_utils.utils as hmu
@@ -10,18 +11,38 @@ data = df['english_marks'].to_numpy()
 
 # Find values
 hmu.print_centered("Values",80,"*")
-min_value = np.min(data)
-max_value = np.max(data)
-average = np.mean(data)
-standard_deviation = np.std(data)
+global_min_value : float = np.min(data)
+global_max_value : float = np.max(data)
+average : float = np.mean(data)
+standard_deviation : float = np.std(data)
+agustin_min_proportion_low_value : float = average - standard_deviation
+agustin_max_proportion_low_value : float = average + standard_deviation
+agustin_lowZ_first_form: float = (agustin_min_proportion_low_value - average)/standard_deviation
+agustin_highZ_first_form: float = (agustin_max_proportion_low_value - average)/standard_deviation
+agustin_min_proportion : float = 1 - ((1/2) ** standard_deviation)
+agustin_min_proportion : float = 1 - ((1/2) ** standard_deviation)
 
-print(f"Min_value: {min_value}")
-print(f"Max_value: {max_value}")
-print(f"Theoretic_Normal: {average:.2f}")
-print(f"Standard_Deviation: {standard_deviation:.2f}")
+print("Statistical Summary")
+print("-" * 40)
+print(f"Minimum value in array: {global_min_value:.2f}")
+print(f"Maximum value in array: {global_max_value:.2f}")
+print(f"Average value: {average:.2f}")
+print(f"Standard deviation: {standard_deviation:.2f}")
+print()
 
+print("Agustin's Proportion Details")
+print("-" * 40)
+print(f"Min proportion range: {agustin_lowZ_first_form:.2f} to {agustin_highZ_first_form:.2f}")
+print(f"Agustin minimum proportion: {agustin_min_proportion:.2f}")
+
+p = 0.7
+log_term = math.log(1 / (1 - p)) / math.log(2)
+low_range = average - (standard_deviation * log_term)
+high_range = average + (standard_deviation * log_term)
+
+print(f"Agustin proportion at 70%: {low_range:.2f} to {high_range:.2f}")
 # Curva normal teórica
-x = np.linspace(min_value, max_value, 100)
+x = np.linspace(global_min_value, global_max_value, 100)
 y = norm.pdf(x, average, standard_deviation)
 
 # Visualización
