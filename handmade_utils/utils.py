@@ -1,3 +1,6 @@
+from math import comb
+from typing import List, Dict, Tuple
+
 import numpy as np
 import pandas as pd
 
@@ -56,3 +59,45 @@ def variance_of_sample(data : list) -> float:
     variance = (sum((x - average) ** 2 for x in data)) / (number_total_elements - 1)
     return variance
 
+def split_into_quantile_groups(df: pd.DataFrame, column: str, n_groups: int) -> List[pd.DataFrame]:
+    quantile_labels = pd.qcut(df[column],q=n_groups,labels=False,duplicates='drop')
+    df_copy = df.copy()
+    df_copy['quantile_group'] = quantile_labels
+
+    groups: List[pd.DataFrame] = [
+        df_copy[df_copy['quantile_group'] == i].drop(columns=['quantile_group'])
+        for i in range(quantile_labels.max() + 1)
+    ]
+    return groups
+
+def count_value_frequencies( df: pd.DataFrame, column: str) -> Dict[str, int]:
+    counts = df[column].value_counts().to_dict()
+    return counts
+
+def get_group_ranges(df: pd.DataFrame, column: str) -> Tuple[float, float]:
+    return df[column].min(), df[column].max()
+
+def prob_intersection(probability_a : float, probability_b : float) -> float:
+    PA = probability_a / 100
+    PB = probability_b / 100
+    intersection = PA * PB
+    return intersection * 100
+
+def prob_union(probability_a: float, probability_b: float, intersection: float = None) -> float:
+    PA = probability_a / 100
+    PB = probability_b / 100
+
+    if intersection is None:
+        P_intersection = PA * PB
+    else:
+        P_intersection = intersection / 100
+
+    union = PA + PB - P_intersection
+    return union * 100
+
+def repetition_in_muestral_space(total_count : int, subgroup_total : int, amount_to_remove : int, desired_amount : int):
+    if desired_amount > amount_to_remove or desired_amount > subgroup_total:
+        return 0.0
+
+    prob = (comb(subgroup_total, desired_amount) * comb(total_count - subgroup_total, amount_to_remove - desired_amount)) / comb(total_count, amount_to_remove)
+    return prob * 100
