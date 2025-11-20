@@ -101,3 +101,10 @@ def repetition_in_muestral_space(total_count : int, subgroup_total : int, amount
 
     prob = (comb(subgroup_total, desired_amount) * comb(total_count - subgroup_total, amount_to_remove - desired_amount)) / comb(total_count, amount_to_remove)
     return prob * 100
+
+def joint_standard_deviation(n1 : int, std_dev1 : float, n2: int, std_dev2 : float) -> float:
+    joint_variance : float = ((((n1 -1) * (std_dev1**2)) + ((n2 -1) * (std_dev2**2))) / (n1 + n2 - 2))
+    return joint_variance ** 0.5
+
+def joint_margin_of_error(z : float, joint_standard_deviation : float, n1 : int, n2 : int) -> float:
+    return (z * joint_standard_deviation) * (((1 / n1) + (1 / n2)) ** 0.5)
