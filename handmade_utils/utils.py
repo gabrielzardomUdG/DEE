@@ -108,3 +108,61 @@ def joint_standard_deviation(n1 : int, std_dev1 : float, n2: int, std_dev2 : flo
 
 def joint_margin_of_error(z : float, joint_standard_deviation : float, n1 : int, n2 : int) -> float:
     return (z * joint_standard_deviation) * (((1 / n1) + (1 / n2)) ** 0.5)
+
+def count_between(df: pd.DataFrame, column: str, low: int, high: int) -> int:
+    mask = (df[column] >= low) & (df[column] <= high)
+    return mask.sum()
+
+def count_by_group_in_range(df: pd.DataFrame, range_column: str, low: int, high: int, group_column: str) -> pd.DataFrame:
+    subset: pd.DataFrame = df[(df[range_column] >= low) &(df[range_column] <= high)]
+    counts: pd.Series = subset[group_column].value_counts()
+    result: pd.DataFrame = counts.to_frame(name='count')
+    n_total: int = int(len(df))
+    result['percent'] = (result['count'] / n_total) * 100
+
+    total_row: pd.DataFrame = pd.DataFrame(
+        {
+            'count': [counts.sum()],
+            'percent': [result['percent'].sum()]
+        },
+        index=['TOTAL']
+    )
+
+    result = pd.concat([result, total_row])
+    return result
+
+def count_by_group_below(df: pd.DataFrame, range_column: str, limit : float, group_column: str) -> pd.DataFrame:
+    subset: pd.DataFrame = df[(df[range_column] < limit)]
+    counts: pd.Series = subset[group_column].value_counts()
+    result: pd.DataFrame = counts.to_frame(name='count')
+    n_total: int = int(len(df))
+    result['percent'] = (result['count'] / n_total) * 100
+
+    total_row: pd.DataFrame = pd.DataFrame(
+        {
+            'count': [counts.sum()],
+            'percent': [result['percent'].sum()]
+        },
+        index=['TOTAL']
+    )
+
+    result = pd.concat([result, total_row])
+    return result
+
+def count_by_group_above(df: pd.DataFrame, range_column: str, limit : float, group_column: str) -> pd.DataFrame:
+    subset: pd.DataFrame = df[(df[range_column] > limit)]
+    counts: pd.Series = subset[group_column].value_counts()
+    result: pd.DataFrame = counts.to_frame(name='count')
+    n_total: int = int(len(df))
+    result['percent'] = (result['count'] / n_total) * 100
+
+    total_row: pd.DataFrame = pd.DataFrame(
+        {
+            'count': [counts.sum()],
+            'percent': [result['percent'].sum()]
+        },
+        index=['TOTAL']
+    )
+
+    result = pd.concat([result, total_row])
+    return result

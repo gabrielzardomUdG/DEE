@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8d29bb5-6be0-49f1-a66c-8c3a4a1f0c71" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/mean_comparation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binomial_distribution.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/distribucion_of_continuous_variables.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/handmade_utils/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/handmade_utils/utils.py" afterDir="false" />
     </list>
@@ -35,9 +36,11 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Python.1_practice.executor&quot;: &quot;Run&quot;,
+    &quot;Python.binomial_distribution.executor&quot;: &quot;Run&quot;,
     &quot;Python.central_measurement.executor&quot;: &quot;Run&quot;,
     &quot;Python.central_measurements.executor&quot;: &quot;Run&quot;,
     &quot;Python.dispersion_measurements.executor&quot;: &quot;Run&quot;,
+    &quot;Python.distribucion_of_continuous_variables.executor&quot;: &quot;Run&quot;,
     &quot;Python.max_min_normal.executor&quot;: &quot;Run&quot;,
     &quot;Python.max_min_normals.executor&quot;: &quot;Run&quot;,
     &quot;Python.mean_comparation.executor&quot;: &quot;Run&quot;,
@@ -63,8 +66,8 @@
       <recent name="C:\DEE\source" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.mean_comparation">
-    <configuration name="central_measurements" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.distribucion_of_continuous_variables">
+    <configuration name="binomial_distribution" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DEE" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -77,7 +80,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\DEE\central_measurements.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/binomial_distribution.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -108,7 +111,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="max_min_normal" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="distribucion_of_continuous_variables" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DEE" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -121,7 +124,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\DEE\max_min_normal.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/distribucion_of_continuous_variables.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -176,11 +179,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.distribucion_of_continuous_variables" />
         <item itemvalue="Python.mean_comparation" />
+        <item itemvalue="Python.binomial_distribution" />
         <item itemvalue="Python.dispersion_measurements" />
         <item itemvalue="Python.probability_calculation" />
-        <item itemvalue="Python.central_measurements" />
-        <item itemvalue="Python.max_min_normal" />
       </list>
     </recent_temporary>
   </component>
