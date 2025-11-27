@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8d29bb5-6be0-49f1-a66c-8c3a4a1f0c71" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/anova.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/working.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/handmade_utils/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/handmade_utils/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anova.py" beforeDir="false" afterPath="$PROJECT_DIR$/anova.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handmade_utils/anova_adeva.py" beforeDir="false" afterPath="$PROJECT_DIR$/handmade_utils/anova_adeva.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

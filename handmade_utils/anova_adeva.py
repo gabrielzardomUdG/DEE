@@ -170,14 +170,15 @@ def example_practice(confidance_coeficient0to1 : np.float64 = 0.05):
     print(anodeva_table, "\n")
     return
 
-def anova_adeva_analysis(input_data : pd.DataFrame, subject : str, confidance_coeficient0to1 : np.float64 = 0.05) -> None:
+def anova_adeva_analysis(input_data : pd.DataFrame, subject : str, confidence_coeficient0to1 : np.float64 = 0.05, print_input_data : bool = True) -> None:
     summary_table : pd.DataFrame = produce_summary_table_from(input_data)
     anodeva_analysis : pd.DataFrame = produce_anova_adeva_analysis(summary_table)
-    anodeva_table : pd.DataFrame = generate_anodeva_table(anodeva_analysis, confidance_coeficient0to1, len(summary_table) - 1, summary_table[SH_ELEMENTS].iloc[-1])
-    print()
-    hmu.print_centered("Input Data : " +  subject, 108, "*")
-    print(input_data)
-    print()
+    anodeva_table : pd.DataFrame = generate_anodeva_table(anodeva_analysis, confidence_coeficient0to1, len(summary_table) - 1, summary_table[SH_ELEMENTS].iloc[-1])
+    if print_input_data :
+        print()
+        hmu.print_centered("Input Data : " +  subject, 108, "*")
+        print(input_data)
+        print()
     hmu.print_centered("Summary Table : " +  subject, 108, "*")
     print(summary_table,"\n")
     hmu.print_centered("Auxiliar Analysis Table : " +  subject, 108, "*")
