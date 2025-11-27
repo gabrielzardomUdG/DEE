@@ -1,8 +1,11 @@
+from itertools import zip_longest
 from math import comb
-from typing import List, Dict, Tuple
+from typing import List, Dict, Tuple, Hashable
 
 import numpy as np
 import pandas as pd
+from scipy.stats import f
+
 
 def get_class_intervals_info(array_number_limits: list, array_labels: list, dataframe: pd.DataFrame, column_name: str) -> pd.DataFrame:
 
@@ -47,7 +50,7 @@ def print_centered(text: str, width: int, fill_char: str = ' ') -> None:
         raise ValueError("fill_char must be a single character.")
 
     centered_text = text.center(width, fill_char)
-    print(centered_text)
+    print(centered_text, "\n")
 
 def variance_of_sample(data : list) -> float:
     #See variance_of_sample.jpg
