@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8d29bb5-6be0-49f1-a66c-8c3a4a1f0c71" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/goodness_of_fit_analysis_of_a_normal_distribution.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/handmade_utils/goodness_of_fit_analysis_of_a_normal_distribution.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/goodness_of_fit_analysis_of_a_normal_distribution.py" beforeDir="false" afterPath="$PROJECT_DIR$/goodness_of_fit_analysis_of_a_normal_distribution.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

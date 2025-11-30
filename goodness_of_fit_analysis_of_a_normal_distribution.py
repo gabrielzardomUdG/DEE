@@ -36,5 +36,5 @@ all_students    : pd.DataFrame = pd.read_csv('source/data_science_student_marks.
 print()
 hmu.print_centered("IS_NORMAL_DISTRIBUTION", 108, "=")
 visit_all_subjects_is_normal_distribution(all_students)
-hmu.print_centered("IS_UNIFORM_DISTRIBUTION", 108, "=")
-visit_all_subjects_is_uniform_distribution(all_students)
+#hmu.print_centered("IS_UNIFORM_DISTRIBUTION", 108, "=")
+#visit_all_subjects_is_uniform_distribution(all_students)
