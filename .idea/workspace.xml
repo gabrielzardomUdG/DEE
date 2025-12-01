@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8d29bb5-6be0-49f1-a66c-8c3a4a1f0c71" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/handmade_utils/data_holder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handmade_utils/global_constants.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handmade_utils/graph_maker.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/handmade_utils/last_analysis.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/statistical_analysis.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/goodness_of_fit_analysis_of_a_normal_distribution.py" beforeDir="false" afterPath="$PROJECT_DIR$/goodness_of_fit_analysis_of_a_normal_distribution.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handmade_utils/goodness_of_fit_analysis_of_a_normal_distribution.py" beforeDir="false" afterPath="$PROJECT_DIR$/handmade_utils/goodness_of_fit_analysis_of_a_normal_distribution.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handmade_utils/sudents_agrupator.py" beforeDir="false" afterPath="$PROJECT_DIR$/handmade_utils/sudents_agrupator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +53,7 @@
     "Python.mean_comparation.executor": "Run",
     "Python.probability_calculation.executor": "Run",
     "Python.randomness_analysis_of_the_sample.executor": "Run",
+    "Python.statistical_analysis.executor": "Run",
     "Python.utils.executor": "Run",
     "Python.working.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -69,7 +76,7 @@
       <recent name="C:\DEE\source" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.goodness_of_fit_analysis_of_a_normal_distribution">
+  <component name="RunManager" selected="Python.statistical_analysis">
     <configuration name="distribucion_of_continuous_variables" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DEE" />
       <option name="ENV_FILES" value="" />
@@ -136,28 +143,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="max_min_normal" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="DEE" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/max_min_normal.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="randomness_analysis_of_the_sample" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DEE" />
       <option name="ENV_FILES" value="" />
@@ -180,13 +165,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="statistical_analysis" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="DEE" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/statistical_analysis.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.statistical_analysis" />
         <item itemvalue="Python.goodness_of_fit_analysis_of_a_normal_distribution" />
-        <item itemvalue="Python.randomness_analysis_of_the_sample" />
         <item itemvalue="Python.inference_of_deviations" />
+        <item itemvalue="Python.randomness_analysis_of_the_sample" />
         <item itemvalue="Python.distribucion_of_continuous_variables" />
-        <item itemvalue="Python.max_min_normal" />
       </list>
     </recent_temporary>
   </component>

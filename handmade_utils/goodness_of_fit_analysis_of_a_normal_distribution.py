@@ -156,6 +156,7 @@ def is_normal_distribution(subject : str,  data: np.ndarray | pd.Series, n_inter
     print("Intervals:", result["intervals"])
     print("Observed Frequency : ", observed_frequency)
     print("Expected Frequency : ", expected_frequency)
+    print()
     print(produce_null_hypothesis_table(observed_frequency, expected_frequency, alpha))
 
     intervals  = np.array(result["intervals"])
@@ -169,6 +170,7 @@ def is_normal_distribution(subject : str,  data: np.ndarray | pd.Series, n_inter
     kurt_excess = kurtosis(data)
     kurt_total = kurtosis(data, fisher=False)
 
+    print()
     print("Midpoints:", midpoints)
     print("Skewness:", skew_value)
     print("Kurtosis Excess:", kurt_excess)
@@ -184,5 +186,6 @@ def is_uniform_distribution(subject : str,  data: np.ndarray | pd.Series, n_inte
     print("Max:", result["max"])
     print("Intervals:", result["intervals"])
     print("Observed Frequency : ", observed_frequency)
+    print()
     print(produce_null_hypothesis_table_is_uniform_distribution(observed_frequency, alpha))
     return
